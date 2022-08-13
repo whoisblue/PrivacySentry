@@ -3,8 +3,10 @@ apply plugin: 'kotlin'
 dependencies {
     implementation gradleApi()//gradle sdk
     implementation localGroovy()
-    implementation project(path: ':privacy-annotation')
-    implementation 'com.android.tools.build:gradle:3.5.1'
+//    implementation project(path: ':privacy-annotation')
+    def privacyVersion = "1.0.9"
+    implementation "com.github.allenymt.PrivacySentry:privacy-annotation:$privacyVersion"
+    implementation 'com.android.tools.build:gradle:3.3.3'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     // ASM V7.1
@@ -14,11 +16,11 @@ dependencies {
     implementation "com.alibaba:fastjson:1.1.68.android"
 }
 
-if (rootProject.ext.plugin_local_debug) {
+//if (rootProject.ext.plugin_local_debug) {
     // 插件本地调试补充
     apply plugin: 'maven'
     group = 'com.yl.lib.plugin'
-    version = '0.0.1.96-SNAPSHOT'
+    version = '1.0.9'
     uploadArchives {
         repositories {
             mavenDeployer {
@@ -26,8 +28,8 @@ if (rootProject.ext.plugin_local_debug) {
             }
         }
     }
-} else {
-    apply plugin: 'com.github.dcendents.android-maven'
-}
+//} else {
+//    apply plugin: 'com.github.dcendents.android-maven'
+//}
 
 
