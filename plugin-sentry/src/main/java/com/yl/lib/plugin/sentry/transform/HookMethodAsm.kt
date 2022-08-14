@@ -123,18 +123,19 @@ class SentryTraceMethodAdapter : AdviceAdapter {
 
     //访问某个成员变量，变量拦截目前只有android/os/Build.SERIAL,所以直接写死了。
     override fun visitFieldInsn(opcode: Int, owner: String?, name: String?, descriptor: String?) {
-        if (owner.equals("android/os/Build") && descriptor.equals("Ljava/lang/String;") && name.equals(
-                "SERIAL"
-            )
-        ) {
-            mv.visitFieldInsn(
-                opcode,
-                "com.yl.lib.privacy_proxy.ProxyProxyField".replace(".", "/"),
-                "proxySerial",
-                descriptor
-            )
-            return
-        }
+        //不使用privacy-proxy依赖，故暂且移除此hook
+//        if (owner.equals("android/os/Build") && descriptor.equals("Ljava/lang/String;") && name.equals(
+//                "SERIAL"
+//            )
+//        ) {
+//            mv.visitFieldInsn(
+//                opcode,
+//                "com.yl.lib.privacy_proxy.ProxyProxyField".replace(".", "/"),
+//                "proxySerial",
+//                descriptor
+//            )
+//            return
+//        }
         super.visitFieldInsn(opcode, owner, name, descriptor)
     }
 }
