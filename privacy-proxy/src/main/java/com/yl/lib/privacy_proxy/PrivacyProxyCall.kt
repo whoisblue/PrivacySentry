@@ -1033,6 +1033,12 @@ open class PrivacyProxyCall {
         )
         @JvmStatic
         fun getStringSystem(contentResolver: ContentResolver?, type: String?): String? {
+            if (!"android_id".equals(type)) {
+                return Settings.System.getString(
+                    contentResolver,
+                    type
+                )
+            }
             return getString(contentResolver, type)
         }
 
