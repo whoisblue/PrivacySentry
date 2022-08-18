@@ -509,7 +509,7 @@ open class PrivacyProxyCall {
                     return PrivacyProxyUtil.Util.getCacheStaticParam("", key)
                 }
                 doFilePrinter(key, "移动设备标识符-getMeid()")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.getMeid()
                 } catch (e: Throwable) {
@@ -544,7 +544,7 @@ open class PrivacyProxyCall {
                     return PrivacyProxyUtil.Util.getCacheStaticParam("", key)
                 }
                 doFilePrinter(key, "移动设备标识符-getMeid()")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.getMeid(index)
                 } catch (e: Throwable) {
@@ -582,7 +582,7 @@ open class PrivacyProxyCall {
                 }
 
                 doFilePrinter(key, "IMEI-getDeviceId()")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.getDeviceId()
                 } catch (e: Throwable) {
@@ -623,7 +623,7 @@ open class PrivacyProxyCall {
                 }
 
                 doFilePrinter(key, "IMEI-getDeviceId()")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.getDeviceId(index)
                 } catch (e: Throwable) {
@@ -668,7 +668,7 @@ open class PrivacyProxyCall {
                     return PrivacyProxyUtil.Util.getCacheStaticParam("", key)
                 }
                 doFilePrinter(key, "IMSI-getSubscriberId(I)")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.subscriberId
                 } catch (e: Throwable) {
@@ -716,7 +716,7 @@ open class PrivacyProxyCall {
                 }
 
                 doFilePrinter(key, "IMEI-getImei()")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.getImei()
                 } catch (e: Throwable) {
@@ -752,7 +752,7 @@ open class PrivacyProxyCall {
                     return PrivacyProxyUtil.Util.getCacheStaticParam("", key)
                 }
                 doFilePrinter(key, "设备id-getImei(I)")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.getImei(index)
                 } catch (e: Throwable) {
@@ -797,7 +797,7 @@ open class PrivacyProxyCall {
                     return PrivacyProxyUtil.Util.getCacheStaticParam("", key)
                 }
                 doFilePrinter(key, "SIM卡-getSimSerialNumber()")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.getSimSerialNumber()
                 } catch (e: Throwable) {
@@ -844,7 +844,7 @@ open class PrivacyProxyCall {
                     return PrivacyProxyUtil.Util.getCacheStaticParam("", key)
                 }
                 doFilePrinter(key, "手机号-getLine1Number")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.line1Number
                 } catch (e: Throwable) {
@@ -882,7 +882,7 @@ open class PrivacyProxyCall {
                     return PrivacyProxyUtil.Util.getCacheStaticParam("", key)
                 }
                 doFilePrinter(key, "mac地址-getMacAddress")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.getMacAddress()
                 } catch (e: Throwable) {
@@ -924,7 +924,7 @@ open class PrivacyProxyCall {
                 }
 
                 doFilePrinter(key, "mac地址-getHardwareAddress")
-                var value = ByteArray(1)
+                var value: ByteArray? = ByteArray(1)
                 try {
                     value = manager.hardwareAddress
                 } catch (e: Throwable) {
@@ -959,7 +959,7 @@ open class PrivacyProxyCall {
                 }
 
                 doFilePrinter(key, "蓝牙地址-getAddress")
-                var value = ""
+                var value: String? = ""
                 try {
                     value = manager.address
                 } catch (e: Throwable) {
